@@ -3,9 +3,7 @@
 #include<string.h>
 #include<stdlib.h>
 #include<ctype.h>
-//===========================================================
-//    TREE IMPLEMENTATIONS
-//===========================================================
+
 struct songBstNode{
     char*name;
     int length;
@@ -34,9 +32,7 @@ struct albumBinarySearchTree{
     albumBstNode*root;
 };
 typedef struct albumBinarySearchTree albumBinarySearchTree;
-//===========================================================
-//    TREE METHODS
-//===========================================================
+
 void moveNext(){
     printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 }
@@ -50,18 +46,6 @@ int isNumber(char*buffer){
 void printError(){
     moveNext();
     printf("***************************************\n");
-    printf("*  <HappyPlayer>                      *\n");
-    printf("***************************************\n");
-    printf("*             .-\"\"\"\"\"\"-.              *\n");
-    printf("*           .'          '.            *\n");
-    printf("*          /   X      X   \\           *\n");
-    printf("*         :                :          *\n");
-    printf("*         |                |          *\n");
-    printf("*         :    .------.    :          *\n");
-    printf("*          \\  '        '  /           *\n");
-    printf("*           '.          .'            *\n");
-    printf("*             '-......-'              *\n");
-    printf("*                                     *\n");
     printf("*[AN ERROR ACCURRED.]                 *\n");
     printf("*[YOU ENTERED AN INVALID OPTION.]     *\n");
     printf("*[PLEASE PRESS ENTER TO GO BACK.]     *\n");
@@ -269,23 +253,7 @@ void showAlbumsInBetweenParticularYears(albumBstNode*albumNode,int lowerBoundary
         }
     }
 }
-void songsWithParticularLength(songBstNode*songNode,int lowerBoundary,int upperBoundary,char*singer,int*error){
-    if(songNode){
-        songsWithParticularLength(songNode->left,lowerBoundary,upperBoundary,singer,error);
-        if(songNode->length>=lowerBoundary&&songNode->length<=upperBoundary){
-            printf("*%s,%d,%s\n",songNode->name,songNode->length,singer);
-            *error = 0;
-        }
-        songsWithParticularLength(songNode->right,lowerBoundary,upperBoundary,singer,error);
-    }
-}
-void showSongsWithParticularLength(albumBstNode*albumNode,int lowerBoundary,int upperBoundary,int*error){
-    if(albumNode){
-        showSongsWithParticularLength(albumNode->left,lowerBoundary,upperBoundary,error);
-        songsWithParticularLength(albumNode->songs->root,lowerBoundary,upperBoundary,albumNode->singer,error);
-        showSongsWithParticularLength(albumNode->right,lowerBoundary,upperBoundary,error);
-    }
-}
+
 //===========================================================
 //    INT MAIN
 //===========================================================
@@ -296,15 +264,6 @@ int main(){
     while(1){
         moveNext();
         printf("***************************************\n");
-        printf("*  <HappyPlayer>                      *\n");
-        printf("***************************************\n");
-        printf("*    _,,._                            *\n");
-        printf("*  ,'     `.__,--.                    *\n");
-        printf("* /   .--.        |           ,,,     *\n");
-        printf("* | [=========|==|==|=|==|=|==___]    *\n");
-        printf("* \\   \"--\"  __    |           '''     *\n");
-        printf("*  `._   _,'  `--'                    *\n");
-        printf("*     \"\"'                             *\n");
         printf("***************************************\n");
         printf("*-------------------------------------*\n");
         printf("*1. Add an album                      *\n");
